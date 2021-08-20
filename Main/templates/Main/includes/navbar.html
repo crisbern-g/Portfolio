@@ -1,0 +1,47 @@
+<nav class="navbar navbar-dark navbar-expand-lg fixed-top" id="navbar">
+    <div class="container-fluid">
+
+        {% comment %} brand name {% endcomment %}
+        <a class="navbar-brand" href="#" id="name">Crisbern T. Gozun</a>
+
+        {% comment %} Button for toggler (show or hide offcanvas) {% endcomment %}
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        {% comment %} start of offcanvass {% endcomment %}
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            {% comment %} offcanvas header {% endcomment %}
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+
+            {% comment %} offcanvas body {% endcomment %}
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Projects</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Me</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact Me</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</nav>

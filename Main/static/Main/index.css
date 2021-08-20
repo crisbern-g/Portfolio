@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap');
+
+/* Banner STuff */
+#banner{
+    background-image: url('/static/head.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin-top: 58px;
+    top: 0%;
+    width: 100%;
+}
+
+#banner .container{
+    padding-top: 20px;
+}
+
+#banner .container .row .col p{
+    color: white;
+    font-family: 'Comfortaa', cursive;
+    font-size: 1.5rem;
+}
+
+#header-buttons-span button{
+    margin: 10px 5px;
+    font-family: 'Comfortaa', cursive;
+}
+
+#name{
+    font-family: 'Righteous', cursive;
+    font-size: 2rem;
+}
+
+#author-pic-container{
+    padding-left: 40px;
+    padding-top: 30px;
+}
+
+#author-pic{
+    border-radius: 20px;
+    border: 4px solid rgb(255, 255, 255);
+    margin: 30px auto;
+    transform: rotate(7deg);
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+#author-pic:hover{
+    transform: rotate(0deg);
+    transition: 0.5s;
+}
+
+/* Navbar stylings */
+
+.navbar{
+    background-color: #151E3D;
+}
+
+.nav-link{
+    font-family: 'Righteous', cursive;
+    font-size: 1.5rem;
+    margin: 0px 0.5rem;
+}
+
+.offcanvas-body{
+    background-color: #151E3D;
+}

@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_file %}
+    <link rel="stylesheet" href="{% static 'Main/index.css' %}">
+{% endblock css_file %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<header>
+  {% include 'Main/includes/navbar.html' %}
+
+  <div class="d-flex" id="banner">
+    <div class="container">
+
+      <div class="row row-cols-xxl-2 row-cols-xl-2 row-cols-lg-2 row-cols-md-2 row-cols-sm-1 row-cols-xs-1">
+        {% comment %} Introduction Message {% endcomment %}
+        <div class="col col-sm-auto">
+          <p>
+            Hello,
+            <br><br>
+            My name is <b>Crisbern T. Gozun</b>.
+            <br><br>
+            As of now, I am a graduating student of B.S. Computer Engineering in Don Honorio Ventura State University.
+            <br><br>
+            Graduation is relatively near but my dreams are still out of reach. Help me reach my dreams by helping yourself around here and engaging my services.
+          </p>
+          {% comment %} Contact me and My Projects Button {% endcomment %}
+          <span id="header-buttons-span">
+            <button class="btn btn-outline-light">Contact Me</button>
+            <button class="btn btn-outline-light">My Projects</button> 
+          </span>
+
+        </div>
+
+        {% comment %} My Picture {% endcomment %}
+        <div class="col col-auto col-xs-auto" id="author-pic-container">
+          <img src="{% static 'bern.jpg' %}" alt="" id="author-pic" class="img-fluid">
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</header>
+
+<section>
+  <div class="container">
+    <p>
+ 
+    </p>
+  </div>
+</section>
+{% endblock %}
+
