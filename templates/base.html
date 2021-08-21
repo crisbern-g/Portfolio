@@ -12,6 +12,63 @@
 </head>
 <body>
     {% block content %}{% endblock content %}
+
+    {% comment %} Footer-Visible to all pages {% endcomment %}
+    <footer>
+        <div class="d-flex position-relative bottom-0">
+            <div class="container">
+                <div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-1 row-cols-xs-1" id="footer-row">
+                    {% comment %} Site column {% endcomment %}
+                    <div class="col footer-list">
+                        <ul>
+                            <li><h3>Site</h3></li>
+
+                            <li><a href="">Home</a></li>
+
+                            <li><a href="">Projects</a></li>
+
+                            <li><a href="">Blog</a></li>
+
+                            <li><a href="">About Me</a></li>
+
+                            <li><a href="">Contact Me</a></li>
+                        </ul>
+                    </div>
+                    {% comment %} Contact Me column {% endcomment %}
+                    <div class="col footer-list">
+                        <ul>
+                            <li><h3>Contact Me</h3></li>
+
+                            <li>Github: <a href="https://github.com/crisbern-g">crisbern-g</a></li>
+
+                            <li>Facebook: <a href="https://www.facebook.com/Crisbern022/">Crisbern Gozun</a></li>
+
+                            <li>Instagram: <a href="https://www.instagram.com/">bern_sqrd</a></li>
+
+                            <li>Email: <a href="mailto:crisberngozun022@gmail.com">crisberngozun022@gmail.com</a></li>
+
+                            <li>Phone/Telegram: +63975 845 7339</li>
+                        </ul>
+                    </div>
+                    {% comment %} Column containing my name and a quote {% endcomment %}
+                    <div class="col" id="footer-last-column">
+                        <ul>
+                            <li>
+                                <h3>Crisbern T. Gozun</h3>
+                                <p>
+                                    <br>
+                                    A hopeful graduating student of Computer Engineering. Aspiring to have a prosperous career in software development.
+                                    <br><br>
+                                    © 2021.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 </body>
 </html>
