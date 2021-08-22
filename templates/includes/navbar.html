@@ -1,4 +1,4 @@
-<nav class="navbar navbar-dark navbar-expand-lg fixed-top" id="navbar">
+<nav class="navbar navbar-dark navbar-expand-lg sticky-top" id="navbar">
     <div class="container-fluid">
 
         {% comment %} brand name {% endcomment %}
@@ -21,11 +21,11 @@
             <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Home</a>
+                        <a class="nav-link {% if page == 'home' %}active{% endif %}" href="{% url 'home' %}">Home</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Projects</a>
+                        <a class="nav-link " href="#">Projects</a>
                     </li>
 
                     <li class="nav-item">
@@ -33,11 +33,11 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About Me</a>
+                        <a class="nav-link {% if page == 'about_me' %}active{% endif %}" href="{% url 'about_me' %}">About Me</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact Me</a>
+                        <a class="nav-link {% if page == 'contact_me' %}active{% endif %}" " href="{% url 'contact_me' %}">Contact Me</a>
                     </li>
                 </ul>
             </div>

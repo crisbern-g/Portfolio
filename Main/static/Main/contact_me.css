@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+main{
+    padding-top: 30px;
+}
+
+main p, h1{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+main p{
+    font-size: 30px;
+}
+
+#contacts_row ul{
+    padding: 0;
+    list-style: none;
+}
+
+#contacts_row li span img{
+    display: inline;
+    height: 60px;
+    width: 60px;
+    margin-right: 20px;
+}
+
+#contacts_row li{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+
+#contacts_row li a{
+    text-decoration: none;
+    color: black;
+}
+
+#contacts_row li a:hover{
+    border-bottom: 2px solid black;
+}

@@ -10,11 +10,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <title>{% block title %}{% endblock title %}</title>
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
     {% block content %}{% endblock content %}
 
     {% comment %} Footer-Visible to all pages {% endcomment %}
-    <footer>
+    <footer class="mt-auto">
         <div class="d-flex position-relative bottom-0">
             <div class="container">
                 <div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-1 row-cols-xs-1" id="footer-row">
@@ -39,11 +39,11 @@
                         <ul>
                             <li><h3>Contact Me</h3></li>
 
-                            <li>Github: <a href="https://github.com/crisbern-g">crisbern-g</a></li>
+                            <li>Github: <a href="https://github.com/crisbern-g" target="_blank">crisbern-g</a></li>
 
-                            <li>Facebook: <a href="https://www.facebook.com/Crisbern022/">Crisbern Gozun</a></li>
+                            <li>Facebook: <a href="https://www.facebook.com/Crisbern022/" target="_blank">Crisbern Gozun</a></li>
 
-                            <li>Instagram: <a href="https://www.instagram.com/">bern_sqrd</a></li>
+                            <li>Instagram: <a href="https://www.instagram.com/bern_sqrd/" target="_blank">bern_sqrd</a></li>
 
                             <li>Email: <a href="mailto:crisberngozun022@gmail.com">crisberngozun022@gmail.com</a></li>
 

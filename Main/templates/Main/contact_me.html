@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contact Me{% endblock title %}
+{% block css_file %}
+    <link rel="stylesheet" href="{% static 'Main/contact_me.css' %}">
+{% endblock css_file %}
+
+{% block content %}
+    <header>
+        {% include 'includes/navbar.html' with page='contact_me' %}
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-auto">
+                    <h1>Get In Touch With Me...</h1>
+                    <br>
+                    <p>
+                    Here are some of my socials and my phone number. I am active in all listed below so rest assured that I will definitely see your message as soon as possible...unless I'm asleep.
+                    </p>
+                    <br>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-auto" id="contacts_row">
+                    <ul>
+                        <li>
+                            <span>
+                                <img src="{% static 'Main/github.svg' %}" alt="">
+                                <b>Github:</b> <a href="https://github.com/crisbern-g" target="_blank">crisbern-g<a>
+                            </span>
+                        </li>
+
+                        <li>
+                            <span>
+                            <img src="{% static 'Main/facebook-circular-logo.svg' %}" alt="">
+                                <b>Facebook:</b> <a href="https://www.facebook.com/Crisbern022/" target="_blank">Crisbern Gozun<a>
+                            </span>
+                        </li>
+
+                        <li>
+                            <span>
+                                <img src="{% static 'Main/instagram.svg' %}" alt="">
+                                <b>Instagram:</b> <a href="https://www.instagram.com/bern_sqrd/" target="_blank">bern_sqrd<a>
+                            </span>
+                        </li>
+
+                        <li>
+                            <span>
+                                <img src="{% static 'Main/gmail.svg' %}" alt="">
+                                <b>Email:</b> <a href="mailto:crisberngozun022@gmail.com">crisberngozun022@gmail.com</a>
+                            </span>
+                        </li>
+
+                        <li>
+                            <span>
+                                <img src="{% static 'Main/telephone.svg' %}" alt="">
+                                <b>Phone Number/Telegram:</b> +63975 845 7339
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock content %}

@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_file %}
+    <link rel="stylesheet" href="{% static 'Main/about_me.css' %}">
+{% endblock css_file %}
+
+{% block title %}About Me{% endblock title %}
+
+{% block content %}
+    <header>
+        {% include 'includes/navbar.html' with page='about_me' %}
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="row row-cols-lg-2">
+                <div class="col-auto" id="main">
+                    <h1>About me...</h1>
+                    <br><br>
+
+                    <h1>Who am I?</h1>
+                    <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium explicabo velit vel soluta eum enim voluptas fuga cumque repellat! Omnis pariatur placeat suscipit provident eum harum fugiat, magni impedit! Omnis.
+
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium explicabo velit vel soluta eum enim voluptas fuga cumque repellat! Omnis pariatur placeat suscipit provident eum harum fugiat, magni impedit! Omnis.
+
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium explicabo velit vel soluta eum enim voluptas fuga cumque repellat! Omnis pariatur placeat suscipit provident eum harum fugiat, magni impedit! Omnis.
+
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium explicabo velit vel soluta eum enim voluptas fuga cumque repellat! Omnis pariatur placeat suscipit provident eum harum fugiat, magni impedit! Omnis.
+                    
+                    </p>
+                    <br><br>
+
+                    <h1>What I know so far</h1>
+                    <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium explicabo velit vel soluta eum enim voluptas fuga cumque repellat! Omnis pariatur placeat suscipit provident eum harum fugiat, magni impedit! Omnis.
+
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium explicabo velit vel soluta eum enim voluptas fuga cumque repellat! Omnis pariatur placeat suscipit provident eum harum fugiat, magni impedit! Omnis.
+
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium explicabo velit vel soluta eum enim voluptas fuga cumque repellat! Omnis pariatur placeat suscipit provident eum harum fugiat, magni impedit! Omnis.
+
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium explicabo velit vel soluta eum enim voluptas fuga cumque repellat! Omnis pariatur placeat suscipit provident eum harum fugiat, magni impedit! Omnis.
+                    
+                    </p>
+                    <br><br>
+
+                    <h1>What can you expect from me?</h1>
+                    <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium explicabo velit vel soluta eum enim voluptas fuga cumque repellat! Omnis pariatur placeat suscipit provident eum harum fugiat, magni impedit! Omnis.
+
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium explicabo velit vel soluta eum enim voluptas fuga cumque repellat! Omnis pariatur placeat suscipit provident eum harum fugiat, magni impedit! Omnis.
+
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium explicabo velit vel soluta eum enim voluptas fuga cumque repellat! Omnis pariatur placeat suscipit provident eum harum fugiat, magni impedit! Omnis.
+
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium explicabo velit vel soluta eum enim voluptas fuga cumque repellat! Omnis pariatur placeat suscipit provident eum harum fugiat, magni impedit! Omnis.
+                    
+                    </p>
+                </div>
+
+                <div class="col d-flex justify-content-center align-items-baseline" id="side">
+                    <div class="card">
+                        <img src="{% static 'head.svg' %}" class="card-img-top" alt="...">
+                        
+                        <div class="card-img-overlay">
+                            <span>
+                                <h2 class="card-title">Summary</h2>
+                                <img src="{% static 'bern.jpg' %}" alt="" class="img-fluid" id="author_pic">
+                            </span>
+                        </div>
+
+                        <div class="card-body">
+                            <ul>
+                                <li class="card-text">
+                                    First Name: Crisbern
+                                </li>
+
+                                <li class="card-text">
+                                    Middle Name: Tumang
+                                </li>
+
+                                <li class="card-text">
+                                    Last Name: Gozun
+                                </li>
+
+                                <li class="card-text">
+                                    Birthday: February 22, 2000
+                                </li>
+
+                                <li class="card-text">
+                                    Hobbies: Reading books and coding
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+      <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+{% endblock content %}

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
 /* Banner STuff */
 #banner{
@@ -7,7 +8,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    margin-top: 58px;
     top: 0%;
     width: 100%;
 }
@@ -25,11 +25,6 @@
 #header-buttons-span button{
     margin: 10px 5px;
     font-family: 'Comfortaa', cursive;
-}
-
-#name{
-    font-family: 'Righteous', cursive;
-    font-size: 2rem;
 }
 
 #author-pic-container{
@@ -51,18 +46,24 @@
     transition: 0.5s;
 }
 
-/* Navbar stylings */
-
-.navbar{
-    background-color: #151E3D;
+/* Sections */
+section{
+    font-family: 'Ubuntu', sans-serif;
 }
 
-.nav-link{
-    font-family: 'Righteous', cursive;
-    font-size: 1.5rem;
-    margin: 0px 0.5rem;
+/* Contact Me Section */
+#contact_me{
+    margin-bottom: 20px;
 }
 
-.offcanvas-body{
-    background-color: #151E3D;
+#contact_me_icons img{
+    display: inline;
+    height: 50px;
+    width: 50px;
+    margin-right: 20px;
+}
+
+#contact_me_icons :hover{
+    transition: 500ms;
+    transform: scale(1.5);
 }

@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+p, h1{
+    font-family: 'Ubuntu', sans-serif;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+main, #side{
+    padding-top: 30px;
+    margin-bottom: 20px;
+}
+
+.card{
+    font-family: 'Ubuntu', sans-serif;
+    border: none;
+    width: 21rem;
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.card-body ul{
+    list-style: none;
+    padding: 0;
+    font-family: inherit;
+}
+
+.card-body li{
+    border-bottom: 1px solid rgb(240, 240, 240);
+    margin-top: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bolder;
+}
+
+.card-body li:last-of-type{
+    border-bottom: none;
+}
+
+.card-img-overlay h2{
+    color: white;
+    display: inline;
+}
+
+#author_pic{
+    height: 80px;
+    width: 80px;
+    display: inline;
+    margin-left: 40px;
+    border-radius: 10px;
+    border: white solid 3px;
+    cursor: pointer;
+    transform: rotate(5deg);
+    transition: 500ms;
+}
+
+#author_pic:hover{
+    transform: rotate(none);
+    transform: scale(2);
+    transition: 500ms;
+    border: rgb(86, 42, 136) solid 3px;
+}
