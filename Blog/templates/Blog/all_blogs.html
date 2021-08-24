@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block title %}Blog{% endblock title %}
+
+{% block css_file %}
+    <link rel="stylesheet" href="{% static 'Blog/all_blogs.css' %}">
+{% endblock css_file %}
+
+
+{% block content %}
+    <header>
+        {% include 'includes/navbar.html' with page='blog' %}
+    </header>
+
+    <section id="blogs_section">
+        <div class="container">
+
+            <div class="row row-cols-lg-2">
+
+                <div class="col-lg-8">
+                    
+                    {% for blog in blogs %}
+                        <div class="row blog-card">
+                            <span class="blog_title"><h1>{{ blog.blog_title }}</h1></span>
+
+                            <span class="blog_date">{{ blog.blog_date_added|date:'F d, Y h:i:a T' }}</span>
+                            
+                            <span class="d-flex justify-content-center blog_tag">
+                                <span class="badge bg-light text-dark">Tags:</span>
+                                {% for tag in blog.blog_tag.all %}
+                                    <span class="badge rounded-pill bg-secondary tag-pill">{{tag}}</span>
+                                {% endfor %}
+                            </span>
+
+                            <span class="blog_image">
+                                <img class="img-fluid mx-auto d-block" src="{{ blog.blog_images.all.0.image.url }}" alt="">
+                            </span>
+
+                            <span class="blog_content">
+                                <p>
+                                    {{ blog.blog_text|truncatechars:600 }}
+                                </p>
+                            </span>
+
+                            <span class="read_more">
+                                <a>Read More &#9658;</a>
+                            </span>
+                        </div>
+                    {% endfor %}
+                    
+                </div>
+                
+                {% comment %} Side Bar {% endcomment %}
+                <div class="col-lg-4 d-flex justify-content-center align-items-baseline">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-header">
+                            <h2>Latest Blogs...</h2>
+                        </div>
+
+                        <ul class="list-group list-group-flush">
+                            {% for blog in latest %}
+                                <li class="list-group-item">
+                                    <span>
+                                        <h4>{{ blog.blog_title|truncatechars:10 }}</h4>
+                                        <p>Added {{ blog.blog_date_added|naturaltime }}</p>
+                                    </span>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <span>
+                    {% if page_obj.has_previous %}
+                        <a href="?page=1"> << </a>
+                        <a href="?page={{ page_obj.previous_page_number }}"> < </a>
+                    {% endif %}
+
+                    
+                    {% for num in page_obj.paginator.page_range %}
+                        
+                        {% if num == page_obj.number %}
+                            <strong>{{num}}</strong>
+                        {% elif num > page_obj.number|add:'-4' and num < page_obj.number|add:'4'%}
+                            <a href="?page={{ num }}">{{ num }}</a>
+                        {% endif %}
+                        
+                    {% endfor %}
+                        
+
+                    {% if page_obj.has_next %}
+                        <a href="?page={{ page_obj.next_page_number }}"> > </a>
+                        <a href="?page={{ page_obj.paginator.num_pages }}"> >> </a>
+                    {% endif %}
+
+                </span>
+                    
+            </div>
+        </div>
+    </section>
+{% endblock content %}

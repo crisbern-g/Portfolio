@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+/* Blog Part */
+.blog-card{
+    font-family: 'Ubuntu', sans-serif;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+#blogs_section{
+    padding-top: 30px;
+}
+
+.blog_title{
+    padding-top: 20px;
+    text-align: center;
+    font-family: inherit;
+}
+
+.blog_date{
+    text-align: center;
+    font-weight: bolder;
+    color: rgb(124, 124, 124);
+}
+
+.blog_tag{
+    padding-top: 10px;
+}
+
+.blog_tag .tag-pill{
+    margin-right: 5px;
+}
+
+.blog_image{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.blog_content p{
+    font-size: 21px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.read_more a{
+    padding-left: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.read_more a:after{   
+    content: '';
+    display: block;
+    margin-left: 20px;
+    background-color: rgb(56, 5, 175);
+    transition: ease-out 200ms;
+    transform-origin: bottom left;
+    transform: scaleX(0);
+    width: 95px;
+    height: 2px;
+}
+
+.read_more a:hover:after{
+    transition: ease-in 200ms;
+    transform-origin: bottom left;
+    transform: scaleX(1);
+}
+
+/* Side Bar Card Style */
+.card{
+    font-family: 'Ubuntu', sans-serif;
+    margin-bottom: 30px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.list-group-item span p{
+    padding: 0;
+    color: rgb(124, 124, 124);
+    font-weight: bold;
+    font-size: 12px;
+}

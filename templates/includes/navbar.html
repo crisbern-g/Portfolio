@@ -29,7 +29,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Blog</a>
+                        <a class="nav-link {% if page == 'blog' %}active{% endif %}" href="{% url 'all_blogs' %}">Blog</a>
                     </li>
 
                     <li class="nav-item">
