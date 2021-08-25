@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ blog.blog_title }}{% endblock title %}
+
+{% block css_file %}
+    <link rel="stylesheet" href="{% static 'Blog/blog_detail.css' %}">
+{% endblock css_file %}
+
+{% block content %}
+    {% include 'includes/navbar.html' %}
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <span>
+                        <h1>{{ blog.blog_title }}</h1>
+                    </span>
+
+                    <span class="blog_date_added">
+                        <h5>{{ blog.blog_date_added|date:'F d, Y h:i:a T' }}</h5>
+                    </span>
+
+                    
+                    {% if blog.blog_date_added|date:'F d, Y h:i:a T' != blog.blog_date_modified|date:'F d, Y h:i:a T' %}
+                        <span>
+                             <h6><i>This post was last modified on: {{ blog.blog_date_modified|date:'F d, Y h:i:a T' }}</i></h6>
+                        </span>
+                    {% endif %}
+
+                    {% for image in blog.blog_images.all %}
+                        <div class="d-flex justify-content-center blog_images">
+                            <img src="{{ image.image.url }}" alt="">
+                        </div>
+
+                        <article>
+                            <p>{{ image.image_caption|linebreaks }}</P>
+                        </article>
+                    {% endfor %}
+
+                    <article>
+                        <p>
+                            {{ blog.blog_text|linebreaks }}
+                            <br>
+                        </p>
+                    </article>
+
+                    <span>
+                        <h4>Tags:</h4>
+                        {% for tag in blog.blog_tag.all %}
+                            <span class="badge rounded-pill bg-secondary">{{ tag.tag_name }}</span>
+                        {% endfor %}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row switch-blog">
+
+                <div class="col previous-blog">
+                    {% if blog.get_previous_by_blog_date_added %}
+                        <h3>
+                            <a href="{% url 'blog_detail' blog.get_previous_by_blog_date_added.slug %}">
+                                 &#x25C4
+                                {{blog.get_previous_by_blog_date_added.blog_title|truncatechars:20}}
+                            </a>
+                        </h3>
+                    {% endif %}
+                </div>
+
+                <div class="col text-end next-blog ">
+                    {% if blog.get_next_by_blog_date_added %}
+                        <h3>
+                            <a href="{% url 'blog_detail' blog.get_next_by_blog_date_added.slug %}">
+                                {{blog.get_next_by_blog_date_added.blog_title|truncatechars:20}}
+                                &#x25B6
+                            </a>
+                        </h3>
+                    {% endif %}
+                </div>
+                    
+            </div>
+        </div>
+    </section>
+{% endblock %}

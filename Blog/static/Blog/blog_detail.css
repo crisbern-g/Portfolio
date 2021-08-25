@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+section{
+    font-family: 'Ubuntu', sans-serif;
+    padding-top: 30px;
+    margin-bottom: 30px;
+}
+
+.blog_date_added{
+    color: rgb(124, 124, 124);
+}
+
+article p{
+    font-size: 25px;
+}
+
+img{
+    max-width: 60%;
+    max-height: 60%;
+    margin-bottom: 20px;
+}
+
+/* Next and Previous */
+
+.switch-blog{
+    border-top: 1px solid rgb(230, 230, 230);
+    border-bottom: 1px solid rgb(230, 230, 230);
+}
+
+.switch-blog a{
+    text-decoration: none;
+    color: black;
+    transition: 500ms;
+}
+
+.switch-blog a:hover{
+    color: black;
+}
+
+.previous-blog a:hover{
+    color: #0024a8;
+    transition: 50ms;
+}
+
+.next-blog a:hover{
+    color: #0024a8;
+    transition: 50ms;
+}
+
+.previous-blog h3::before{
+    display: block;
+    content: 'Previous';
+    margin-left: 38px;
+    font-size: 15px;
+}
+
+.next-blog h3::before{
+    display: block;
+    content: 'Next';
+    margin-right: 38px;
+    font-size: 15px;
+}

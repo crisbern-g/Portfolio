@@ -9,7 +9,7 @@ class TagsModel(models.Model):
 
 class BlogImagesModel(models.Model):
     image = models.ImageField(upload_to='blog_images')
-    image_caption = models.CharField(max_length=100, blank=True)
+    image_caption = models.TextField(blank=True)
     image_source = models.CharField(max_length=100, blank=True)
 
 

@@ -22,11 +22,11 @@
                 <div class="col-lg-8">
                     
                     {% for blog in blogs %}
-                        <div class="row blog-card">
+                        <div class="row blog-card" onclick="window.location='{% url 'blog_detail' blog.slug %}'">
                             <span class="blog_title"><h1>{{ blog.blog_title }}</h1></span>
 
                             <span class="blog_date">{{ blog.blog_date_added|date:'F d, Y h:i:a T' }}</span>
-                            
+
                             <span class="d-flex justify-content-center blog_tag">
                                 <span class="badge bg-light text-dark">Tags:</span>
                                 {% for tag in blog.blog_tag.all %}
@@ -45,7 +45,7 @@
                             </span>
 
                             <span class="read_more">
-                                <a>Read More &#9658;</a>
+                                <a href="{% url 'blog_detail' blog.slug %}">Read More &#9658;</a>
                             </span>
                         </div>
                     {% endfor %}
@@ -56,16 +56,27 @@
                 <div class="col-lg-4 d-flex justify-content-center align-items-baseline">
                     <div class="card" style="width: 18rem;">
                         <div class="card-header">
-                            <h2>Latest Blogs...</h2>
+                            <h3>Latest Activities...</h3>
                         </div>
 
                         <ul class="list-group list-group-flush">
                             {% for blog in latest %}
                                 <li class="list-group-item">
-                                    <span>
-                                        <h4>{{ blog.blog_title|truncatechars:10 }}</h4>
-                                        <p>Added {{ blog.blog_date_added|naturaltime }}</p>
-                                    </span>
+                                    <a href="{% url 'blog_detail' blog.slug %}">
+                                        <span>
+                                            <h4>{{ blog.blog_title|truncatechars:10 }}</h4>
+                                            <p>
+                                                {% if blog.blog_date_added|date:'F d, Y h:i:a T' != blog.blog_date_modified|date:'F d, Y h:i:a T' %}
+                                                    Modified {{ blog.blog_date_modified|naturaltime }} <br>
+                                                    <span class="badge bg-warning">Modified</span> 
+                                                {% else %}
+                                                    Added {{ blog.blog_date_modified|naturaltime }} <br>
+                                                    <span class="badge bg-success">New</span> 
+                                                {% endif %}
+                                                
+                                            </p>
+                                        </span>
+                                    </a>
                                 </li>
                             {% endfor %}
                         </ul>
@@ -75,27 +86,38 @@
             </div>
 
             <div class="row">
-                <span>
+            
+                <span class="paginator">
                     {% if page_obj.has_previous %}
-                        <a href="?page=1"> << </a>
-                        <a href="?page={{ page_obj.previous_page_number }}"> < </a>
+                        <a class="btn btn-primary" href="?page=1"> First </a>
+                        <a class="btn btn-primary" href="?page={{ page_obj.previous_page_number }}"> 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-left" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                                <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                            </svg>
+                        </a>
                     {% endif %}
 
                     
                     {% for num in page_obj.paginator.page_range %}
                         
                         {% if num == page_obj.number %}
-                            <strong>{{num}}</strong>
+                            <a class="btn btn-primary">{{num}}</a>
                         {% elif num > page_obj.number|add:'-4' and num < page_obj.number|add:'4'%}
-                            <a href="?page={{ num }}">{{ num }}</a>
+                            <a class="btn btn-outline-primary" href="?page={{ num }}">{{ num }}</a>
                         {% endif %}
                         
                     {% endfor %}
                         
 
                     {% if page_obj.has_next %}
-                        <a href="?page={{ page_obj.next_page_number }}"> > </a>
-                        <a href="?page={{ page_obj.paginator.num_pages }}"> >> </a>
+                        <a class="btn btn-primary" href="?page={{ page_obj.next_page_number }}">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z"/>
+                                <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z"/>
+                            </svg>
+                        </a>
+                        <a class="btn btn-primary" href="?page={{ page_obj.paginator.num_pages }}"> Last </a>
                     {% endif %}
 
                 </span>

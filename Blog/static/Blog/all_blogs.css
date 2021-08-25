@@ -6,6 +6,7 @@
     margin-bottom: 30px;
     padding-bottom: 20px;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    cursor: pointer;
 }
 
 #blogs_section{
@@ -15,7 +16,6 @@
 .blog_title{
     padding-top: 20px;
     text-align: center;
-    font-family: inherit;
 }
 
 .blog_date{
@@ -44,21 +44,30 @@
 }
 
 .read_more a{
+    display: inline-block;
+    position: relative;
     padding-left: 20px;
     font-weight: bold;
     cursor: pointer;
+    text-decoration: none;
+    color: black;
 }
 
-.read_more a:after{   
+.read_more a:hover{
+    color: black;
+}
+
+.read_more a:after{
+    position: absolute;   
     content: '';
-    display: block;
-    margin-left: 20px;
     background-color: rgb(56, 5, 175);
     transition: ease-out 200ms;
     transform-origin: bottom left;
     transform: scaleX(0);
-    width: 95px;
     height: 2px;
+    width: 80%;
+    bottom: 0;
+    left: 20px;
 }
 
 .read_more a:hover:after{
@@ -74,9 +83,51 @@
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
+.list-group-item:hover{
+    background-color: rgb(219, 219, 219);
+}
+
+.list-group-item a{
+    color: black;
+    text-decoration: none;
+}
+
+.list-group-item a:hover{
+    color: black;
+    text-decoration: none;
+}
+
 .list-group-item span p{
+    text-decoration: none;
     padding: 0;
     color: rgb(124, 124, 124);
     font-weight: bold;
     font-size: 12px;
+}
+
+.bg-warning{
+    font-size: 10px !important;
+    color: black !important;
+}
+
+.bg-success{
+    font-size: 10px !important;
+}
+
+
+/* Pagination */
+
+.paginator{
+    margin-bottom: 20px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.btn-primary{
+    background-color: #151E3D !important;
+    border-color: #151E3D !important;
+}
+
+.btn-outline-primary{
+    border-color: #151E3D !important;
+    color: #151E3D !important;
 }
