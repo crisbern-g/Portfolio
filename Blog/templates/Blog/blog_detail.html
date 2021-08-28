@@ -7,13 +7,18 @@
     <link rel="stylesheet" href="{% static 'Blog/blog_detail.css' %}">
 {% endblock css_file %}
 
-{% block content %}
-    {% include 'includes/navbar.html' %}
+{% block navbar %}
+      {% include 'includes/navbar.html' with page='blog' %}
+{% endblock navbar %}
 
+{% block content %}
+    {% comment %} Blog detail section {% endcomment %}
     <section>
         <div class="container">
             <div class="row">
+
                 <div class="col">
+
                     <span>
                         <h1>{{ blog.blog_title }}</h1>
                     </span>
@@ -52,11 +57,13 @@
                             <span class="badge rounded-pill bg-secondary">{{ tag.tag_name }}</span>
                         {% endfor %}
                     </span>
+
                 </div>
             </div>
         </div>
     </section>
 
+    {% comment %} Previous or Next Blog {% endcomment %}
     <section>
         <div class="container">
             <div class="row switch-blog">

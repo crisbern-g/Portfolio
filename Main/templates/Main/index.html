@@ -7,10 +7,12 @@
 
 {% block title %}Home{% endblock title %}
 
-{% block content %}
-  <header>
-    {% include 'includes/navbar.html' with page='home'%}
+{% block navbar %}
+      {% include 'includes/navbar.html' with page='home' %}
+{% endblock navbar %}
 
+{% block content %}
+  <section>
     <div class="d-flex" id="banner">
       <div class="container">
 
@@ -43,33 +45,37 @@
       </div>
     </div>
 
-  </header>
+  </section>
+
+  {% comment %} Blogs_section {% endcomment %}
+  <section id="blog-section">
+    {% include 'Main/includes/index_blog.html' %}
+  </section>
 
   {% comment %} Contacts Section {% endcomment %}
   <section id="contact_me">
 
-  <div class="container">
-    <div class="row">
+    <div class="container">
+      <div class="row">
 
-      <div class="col d-flex justify-content-center">
-        <h1>Contact Me</h1>
+        <div class="col d-flex justify-content-center">
+          <h1>Contact Me</h1>
+        </div>
+
       </div>
 
-    </div>
+      <div class="row">
 
-    <div class="row">
+        <div class="col d-flex justify-content-center">
+          <span id="contact_me_icons">
+            <a href="https://github.com/crisbern-g" target="_blank"><img src="{% static 'Main/github.svg' %}" alt=""></a>
+            <a href="https://www.facebook.com/Crisbern022/" target="_blank"><img src="{% static 'Main/facebook-circular-logo.svg' %}" alt=""></a>
+            <a href="https://www.instagram.com/bern_sqrd/" target="_blank"><img src="{% static 'Main/instagram.svg' %}" alt=""></a>
+            <a href="mailto:crisberngozun022@gmail.com"><img src="{% static 'Main/gmail.svg' %}" alt=""></a>
+          </span>
+        </div>
 
-      <div class="col d-flex justify-content-center">
-        <span id="contact_me_icons">
-          <a href="https://github.com/crisbern-g" target="_blank"><img src="{% static 'Main/github.svg' %}" alt=""></a>
-          <a href="https://www.facebook.com/Crisbern022/" target="_blank"><img src="{% static 'Main/facebook-circular-logo.svg' %}" alt=""></a>
-          <a href="https://www.instagram.com/bern_sqrd/" target="_blank"><img src="{% static 'Main/instagram.svg' %}" alt=""></a>
-          <a href="mailto:crisberngozun022@gmail.com"><img src="{% static 'Main/gmail.svg' %}" alt=""></a>
-        </span>
       </div>
-
     </div>
-  </div>
   </section>
 {% endblock %}
-

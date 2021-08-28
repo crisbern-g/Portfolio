@@ -37,8 +37,8 @@
     transform: rotate(5deg);
     transition: 0.5s;
     cursor: pointer;
-    height: 290px;
-    width: 290px;
+    max-width: 80%;
+    max-height: 80%;
 }
 
 #author-pic:hover{
@@ -46,14 +46,76 @@
     transition: 0.5s;
 }
 
-/* Sections */
-section{
+/* Blog Section */
+#blog-section{
     font-family: 'Ubuntu', sans-serif;
+    background-color: rgb(255, 255, 255);
+    padding-top: 30px;
+}
+
+.blog-entry{
+    background-color: white;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(199, 199, 199);
+}
+
+.blog-entry h3{
+    color: rgb(91, 1, 175);
+}
+
+.blog-entry p{
+    font-size: 22px;
+}
+
+.read-more{
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+.read-more::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(56, 5, 175);;
+    height: 2px;
+    width: 100%;
+    transform: scaleX(0);
+    transition: ease-in 200ms;
+    transform-origin: bottom left;
+}
+
+.read-more:hover::after{
+    transition: ease-in 200ms;
+    transform-origin: bottom left;
+    transform: scaleX(1);
+}
+
+.read-more:hover{
+    color: black;
+}
+
+#more-blogs-button{
+    background-color: rgb(91, 1, 175) !important;
+    border: none;
+}
+
+#more-blogs-button:focus{
+    outline: none !important;
+    background-color: rgb(66, 2, 126) !important;
+    box-shadow: none !important;
 }
 
 /* Contact Me Section */
 #contact_me{
+    font-family: 'Ubuntu', sans-serif;
     margin-bottom: 20px;
+    padding-top: 20px;
 }
 
 #contact_me_icons img{

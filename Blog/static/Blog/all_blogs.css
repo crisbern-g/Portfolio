@@ -5,6 +5,7 @@
     font-family: 'Ubuntu', sans-serif;
     margin-bottom: 30px;
     padding-bottom: 20px;
+    background-color: white !important;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
     cursor: pointer;
 }
@@ -125,6 +126,12 @@
 .btn-primary{
     background-color: #151E3D !important;
     border-color: #151E3D !important;
+}
+
+.btn-outline-primary:hover{
+    background-color: #151E3D !important;
+    border-color: #151E3D !important;
+    color: white !important;
 }
 
 .btn-outline-primary{

@@ -9,11 +9,11 @@
 {% endblock css_file %}
 
 
-{% block content %}
-    <header>
-        {% include 'includes/navbar.html' with page='blog' %}
-    </header>
+{% block navbar %}
+      {% include 'includes/navbar.html' with page='blog' %}
+{% endblock navbar %}
 
+{% block content %}
     <section id="blogs_section">
         <div class="container">
 
@@ -34,8 +34,8 @@
                                 {% endfor %}
                             </span>
 
-                            <span class="blog_image">
-                                <img class="img-fluid mx-auto d-block" src="{{ blog.blog_images.all.0.image.url }}" alt="">
+                            <span class="blog_image d-flex justify-content-center">
+                                <img class= "img-fluid" src="{{ blog.blog_images.all.0.image.url }}" alt="">
                             </span>
 
                             <span class="blog_content">
@@ -85,6 +85,8 @@
 
             </div>
 
+
+            {% comment %} Paginator {% endcomment %}
             <div class="row">
             
                 <span class="paginator">

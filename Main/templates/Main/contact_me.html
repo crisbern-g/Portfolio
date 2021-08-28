@@ -2,15 +2,16 @@
 {% load static %}
 
 {% block title %}Contact Me{% endblock title %}
+
 {% block css_file %}
     <link rel="stylesheet" href="{% static 'Main/contact_me.css' %}">
 {% endblock css_file %}
 
-{% block content %}
-    <header>
-        {% include 'includes/navbar.html' with page='contact_me' %}
-    </header>
+{% block navbar %}
+      {% include 'includes/navbar.html' with page='contact_me' %}
+{% endblock navbar %}
 
+{% block content %}
     <main>
         <div class="container">
             <div class="row">
