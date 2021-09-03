@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+section{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.project-name{
+    margin-bottom: 20px;
+}
+
+.project-demonstration{
+    margin-bottom: 20px;
+}
+
+.project-screen-capture{
+    margin-bottom: 20px;
+}
+
+.project-tools{
+    margin-bottom: 20px;
+}
+
+.project-links{
+    margin-bottom: 20px;
+}
+
+.project-description{
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgb(244, 225, 250);
+    border-left: 5px solid rgb(141, 1, 141);
+}
+
+.project-description{
+    font-size: 25px;
+}
+
+iframe{
+    max-width: 70%;
+    max-height: 70%;
+}

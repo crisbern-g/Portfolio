@@ -6,10 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block css_file %}{% endblock css_file %}
+    <link rel="icon" href="{% static 'icon.png' %}">
     <link rel="stylesheet" href="{% static 'main.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <title>{% block title %}{% endblock title %}</title>
 </head>
+
 <body class="d-flex flex-column min-vh-100">
     <header class="sticky-top">
         {% block navbar %}{% endblock navbar %}
@@ -27,15 +29,15 @@
                         <ul>
                             <li><h3>Site</h3></li>
 
-                            <li><a href="">Home</a></li>
+                            <li><a href="{% url 'home' %}">Home</a></li>
 
-                            <li><a href="">Projects</a></li>
+                            <li><a href="{% url 'all_projects' %}">Projects</a></li>
 
-                            <li><a href="">Blog</a></li>
+                            <li><a href="{% url 'all_blogs' %}">Blog</a></li>
 
-                            <li><a href="">About Me</a></li>
+                            <li><a href="{% url 'about_me' %}">About Me</a></li>
 
-                            <li><a href="">Contact Me</a></li>
+                            <li><a href="{% url 'contact_me' %}">Contact Me</a></li>
                         </ul>
                     </div>
                     {% comment %} Contact Me column {% endcomment %}

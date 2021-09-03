@@ -30,6 +30,13 @@ body{
     font-size: 2rem;
 }
 
+.offcanvas-header{
+    font-family: 'Righteous', cursive;
+    background-color: #151E3D;
+    color: white;
+    font-size: 2rem;
+}
+
 /* footer */
 footer .d-flex{
     background-color: #151E3D;

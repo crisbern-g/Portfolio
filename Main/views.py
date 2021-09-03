@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from django.views.generic import ListView, TemplateView
-from django.views import View
-from Blog.models import BlogModel, TagsModel
+from django.views.generic import TemplateView
+from Blog.models import BlogModel
+from Project.models import ProjectModel
 
 # Create your views here.
 class HomeView(TemplateView):
@@ -9,8 +9,8 @@ class HomeView(TemplateView):
     
     def get_context_data(self, **kwargs):
         context =  super().get_context_data(**kwargs)
-        context['latest_blogs'] = BlogModel.objects.all().order_by('-blog_date_added')[:4]
-        context['tags'] =  TagsModel.objects.all().order_by('tag_name')
+        context['latest_blogs'] = BlogModel.objects.all().order_by('-blog_date_added')[:3]
+        context['projects'] = ProjectModel.objects.all().order_by('?')[:4]
 
         return context
 

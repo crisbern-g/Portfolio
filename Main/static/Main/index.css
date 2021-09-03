@@ -22,7 +22,7 @@
     font-size: 1.5rem;
 }
 
-#header-buttons-span button{
+#header-buttons-span a{
     margin: 10px 5px;
     font-family: 'Comfortaa', cursive;
 }
@@ -46,15 +46,109 @@
     transition: 0.5s;
 }
 
-/* Blog Section */
-#blog-section{
+/* Tech Skills Section */
+#tech-skills-section{
     font-family: 'Ubuntu', sans-serif;
-    background-color: rgb(255, 255, 255);
+    background: #8B0CCA;
+    background: -webkit-linear-gradient(top right, #8B0CCA, #4C335C);
+    background: -moz-linear-gradient(top right, #8B0CCA, #4C335C);
+    background: linear-gradient(to bottom left, #8B0CCA, #4C335C);
     padding-top: 30px;
 }
 
+
+#tech-skills-section h1{
+    color: #fbf6ff;
+}
+
+#tech-skills-section p{
+    font-size: 21px;
+    text-align: justify;
+    color: white;
+}
+
+.dev-icons svg{
+    transition: 500ms;
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
+
+.dev-icons svg:hover{
+    cursor: pointer;
+    animation-name: bounce;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+    0%{
+        transform: translateY(0%);
+        transition: 500ms;
+        transition-property: transform;
+    }
+
+    50%{
+        transform: translateY(20%);
+        transition: 200ms;
+        transition-property: transform;
+    }
+
+    100%{
+        transform: translateY(0%);
+        transition: 200ms;
+        transition-property: transform;
+    }
+}
+
+/* Project Section */
+#project-section{
+    font-family: 'Ubuntu', sans-serif;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-image: linear-gradient( 135deg, #3C8CE7 10%, #00EAFF 100%);
+    color: white;
+}
+
+.section-label{
+    margin-bottom: 20px;
+}
+
+.project-container{
+    position: relative;
+    background-color: rgb(255, 240, 240);
+    padding: 10px;
+    color: black;
+    border-radius: 10px;
+    height: 100%;
+    border: 2px solid rgb(150, 2, 150);
+    cursor: pointer;
+    transition-property: transform;
+    transition: 200ms ease-in;
+}
+
+.project-container:hover{
+    transform: translate(-5%, -5%);
+    box-shadow: 5px 5px rgb(36, 0, 167);
+}
+
+.project-container p{
+    color: rgb(117, 117, 117);
+}
+
+.project-container h4{
+    color: rgb(71, 161, 177);
+}
+
+
+/* Blog Section */
+#blog-section{
+    font-family: 'Ubuntu', sans-serif;
+    background-color: rgb(245, 245, 245);
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
 .blog-entry{
-    background-color: white;
     margin-bottom: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -114,8 +208,13 @@
 /* Contact Me Section */
 #contact_me{
     font-family: 'Ubuntu', sans-serif;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
     padding-top: 20px;
+    background-color: whitesmoke;
+}
+
+#contact_me_icons{
+    margin-bottom: 10px;
 }
 
 #contact_me_icons img{
@@ -128,4 +227,13 @@
 #contact_me_icons :hover{
     transition: 500ms;
     transform: scale(1.5);
+}
+
+.icon-source a{
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.icon-source a:hover{
+    color: white !important;
 }

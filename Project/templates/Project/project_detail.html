@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_file %}
+    <link rel="stylesheet" href="{% static 'Project/project_detail.css' %}">
+{% endblock %}
+
+{% block title %}
+    {{ project.project_name }}
+{% endblock title %}
+
+
+
+{% block navbar %}
+      {% include 'includes/navbar.html' with page='project' %}
+{% endblock navbar %}
+
+{% block content %}
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+
+                    <div class="project-name">
+                        <h1>{{ project.project_name }}</h1>
+                    </div>
+                    
+                    
+                    {% if project.project_demonstration %}
+                        <div class="embed-responsive embed-responsive-4by3 d-flex justify-content-center project-demonstration">
+                            {{ project.project_demonstration|safe }}
+                        </div>
+                    {% endif %}
+
+                    {% if project.project_screencapture %}
+                        <div class="project-screen-capture d-flex justify-content-center">
+                            <img class="img-fluid" src="{{ project.project_screencapture.url }}" alt="">
+                        </div>
+                    {% endif %}
+                        
+
+                    <div class="project-tools">
+                        <h4>Tools: 
+                            {% for tech in project.project_tech.all %} 
+                            
+                                <span class="badge bg-success text-light">{{ tech }}</span>
+                            
+                            {% endfor %}
+                        </h4>
+                    </div>
+
+                    <div class="project-links d-flex">
+                        <h4>Links:</h4>
+
+                        <span>
+                            {% if project.project_repository %}
+                                <a class="btn btn-dark" href="{{ project.project_repository }}" target="_blank">Github Repository</a>
+                            {% endif %}
+
+                            {% if project.project_link %}
+                                <a class="btn btn-primary" href="{{ project.project_link }}" target="_blank">View Live Demo</a>
+                            {% endif %}
+                        </span>
+                            
+                    </div>
+                    
+                    <blockquote class="project-description">
+                        <h2>About the project...</h2>
+                        {{ project.project_description }}
+                    </blockquote>
+
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
