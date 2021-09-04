@@ -22,7 +22,7 @@
                 <div class="col-lg-8">
                     
                     {% for blog in blogs %}
-                        <div class="row blog-card" onclick="window.location='{% url 'blog_detail' blog.slug %}'">
+                        <div class="row blog-card fade-in" onclick="window.location='{% url 'blog_detail' blog.slug %}'">
                             <span class="blog_title"><h1>{{ blog.blog_title }}</h1></span>
 
                             <span class="blog_date">{{ blog.blog_date_added|date:'F d, Y h:i:a T' }}</span>

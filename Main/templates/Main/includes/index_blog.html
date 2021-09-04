@@ -4,7 +4,7 @@
             <h1>Latest Blogs</h1>
 
             {% for blog in latest_blogs %}
-                <div class="row blog-entry">
+                <div class="row blog-entry fade-in">
                     <h3>{{ blog.blog_title }}</h3>
                     <p>{{ blog.blog_text|truncatechars:300 }}</p>
                     <span>
@@ -13,7 +13,7 @@
                 </div>
             {% endfor %}
 
-            <a id="more-blogs-button" class="btn btn-success" href="{% url 'all_blogs' %}">View More Blogs Here</a>
+            <a id="more-blogs-button" class="btn btn-success fade-in" href="{% url 'all_blogs' %}">View More Blogs Here</a>
         </div>
 
     </div>

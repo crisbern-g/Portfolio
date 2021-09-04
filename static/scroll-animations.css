@@ -1,0 +1,34 @@
+.fade-in{
+    opacity: 0;
+    transition-property: opacity;
+    transition: 500ms ease-in;
+}
+
+.slide-in{
+    transition-property: transform, opacity;
+    transition: 500ms ease-in;
+    opacity: 0;
+}
+
+.from-bottom{
+    transform: translateY(10%);
+}
+
+.from-left{
+    transform: translateX(-10%);
+}
+
+.from-right{
+    transform: translateX(10%);
+}
+
+.from-bottom.appear,
+.from-left.appear,
+.from-right.appear{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.fade-in.appear{
+    opacity: 1;
+}
