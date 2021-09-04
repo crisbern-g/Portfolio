@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-j+c_je9#dp-%52&hw2%m*pgkb4(+6mk!xb88$r=!ogz(%r@a*l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['crisbern-portfolio.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['crisbern-portfolio.herokuapp.com']
 
 
 # Application definition
@@ -138,3 +138,8 @@ MEDIA_URL = '/blog_image/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+try:
+    from .local_settings import *
+except ImportError:
+    print('No Local Files')
